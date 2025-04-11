@@ -53,17 +53,16 @@ ROOT_URLCONF = 'mecanica_sample.urls'
 
 TEMPLATES = [
     {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
+        'BACKEND': 'django.db.backends.mysqsl',
+        'NAME': 'oficina_reparos_eletronicos',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '3306',
         'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
-            ],
-        },
+            'init_command': "SET sql_mode = 'STRICT_TRANS_TABLES'",
+            'charset': 'utf8mb4'
+        }
     },
 ]
 
