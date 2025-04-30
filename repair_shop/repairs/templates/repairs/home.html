@@ -1,0 +1,21 @@
+{% extends 'repairs/base.html' %}
+
+{% block content %}
+<div class="home-content">
+    <h2>Bem-vindo ao Sistema de Cadastro de Reparos</h2>
+    <div class="options">
+        <div class="option-card">
+            <h1>Cadastro</h1>
+            <p>Efetue o cadastro do equipamento: Marca, Modelo, Número Serial, Data de Entrada, Data de Saída, Defeito apresentado, Reparo efetuado, peças substituídas.</p>
+            <a href="{% url 'register' %}" class="btn btn-primary">IR PARA CADASTRO</a>
+            <br>
+            <br>
+        </div>
+        <div class="option-card">
+            <h1>Consulta</h1>
+            <p>Consulte a lista de reparos efetuados efetuando uma busca no banco de dados.</p>
+            <a href="{% url 'search' %}" class="btn btn-primary">IR PARA CONSULTA</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

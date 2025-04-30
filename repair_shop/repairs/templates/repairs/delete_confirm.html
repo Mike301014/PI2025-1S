@@ -1,0 +1,34 @@
+{% extends 'repairs/base.html' %}
+
+{% block content %}
+<div class="delete-confirmation">
+    <h2>Confirmar Exclusão</h2>
+    <div class="equipment-details">
+        <p>Você está prestes a excluir o seguinte equipamento:</p>
+        <div class="detail-card">
+            <div class="detail-row">
+                <div class="detail-group">
+                    <label>Marca:</label>
+                    <span>{{ equipment.get_brand_display }}</span>
+                </div>
+                <div class="detail-group">
+                    <label>Modelo:</label>
+                    <span>{{ equipment.model }}</span>
+                </div>
+                <div class="detail-group">
+                    <label>Número Serial:</label>
+                    <span>{{ equipment.serial_number }}</span>
+                </div>
+            </div>
+        </div>
+        <p class="warning">Esta ação não pode ser desfeita!</p>
+        <form method="post">
+            {% csrf_token %}
+            <div class="button-group">
+                <button type="submit" class="btn btn-danger">Confirmar Exclusão</button>
+                <a href="{% url 'search' %}" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %} 
